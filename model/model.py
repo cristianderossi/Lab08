@@ -1,4 +1,7 @@
+from pygments.lexers import whiley
+
 from database.distributore_DAO import DistributoreDAO
+from model.prezzo_DTO import Prezzo
 
 '''
     MODELLO:
@@ -37,15 +40,14 @@ class Model:
 
             for prezzo in prezzi:
 
-                media=sum(prezzo)/len(prezzi)
+                if prezzo.data.month==mese:
+                    lista_prezzi.append(prezzo.prezzo_litro)
 
-                lista_prezzi.append(media)
+                    media=sum(lista_prezzi)/len(lista_prezzi)
 
-        prezzo_medio.append(lista_prezzi)
+                    prezzo_medio.append((distributore.nome, media))
 
-
-
-
+        return prezzo_medio
 
 
 
@@ -71,9 +73,51 @@ class Model:
         """ Implementa la ricorsione """
         # TODO
 
+
+        if giorno > 7 :
+            if self.__costo_ottimo==-1 or self.__costo_ottimo>costo_corrente:
+                self.__costo_ottimo = costo_corrente
+                self.__sequenza_ottima=sequenza_parziale
+
+
+
+
+
     def __get_prezzi_prima_settimana_mese(self, mese: int):
         """
         Restituisce i prezzi dei primi 7 giorni del mese selezionato per ciascun distributore.
-        :return: un dizionario: {id_distributore: [prezzo_giorno1, ..., prezzo_giorno7]}
+        :returndizionario: {id_distributore: [prezzo_giorno1, ..., prezzo_giorno7]}
         """
         # TODO
+
+        dizionario={}
+
+        for distributore in self._distributori:
+            prezzi=distributore.get_prezzi()
+
+            lista_prezzi = []
+
+            if prezzi.data.month==mese and len(lista_prezzi)<7:
+                lista_prezzi.append(prezzi.prezzo_litro)
+
+            dizionario[distributore.id]=lista_prezzi
+
+        return dizionario
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
