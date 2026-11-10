@@ -27,6 +27,26 @@ class Model:
         """
         # TODO
 
+        prezzo_medio=[]
+
+        for distributore  in self._distributori:
+
+            prezzi=distributore.get_prezzi()
+
+            lista_prezzi = []
+
+            for prezzo in prezzi:
+
+                media=sum(prezzo)/len(prezzi)
+
+                lista_prezzi.append(media)
+
+
+
+
+
+
+
     def get_sequenza_ottima(self, mese:int):
         """
         Calcola la sequenza ottimale di rifornimenti nei primi 7 giorni

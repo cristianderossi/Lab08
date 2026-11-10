@@ -14,11 +14,12 @@ class Distributore:
     # RELAZIONI
     lista_prezzi: list = None
 
+
     def get_prezzi(self):
         """ Aggiorna e Restituisce la lista di prezzi (self.lista_prezzi) associati al distributore"""
         # TODO
 
-        self.lista_prezzi = PrezzoDAO.get_prezzi(self.id)
+        lista_prezzi = PrezzoDAO.get_prezzi(self.lista_prezzi)
 
 
         return self.lista_prezzi
