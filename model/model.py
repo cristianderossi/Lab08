@@ -1,4 +1,3 @@
-from pygments.lexers import whiley
 
 from database.distributore_DAO import DistributoreDAO
 from model.prezzo_DTO import Prezzo
@@ -77,7 +76,8 @@ class Model:
         if giorno > 7 :
             if self.__costo_ottimo==-1 or self.__costo_ottimo>costo_corrente:
                 self.__costo_ottimo = costo_corrente
-                self.__sequenza_ottima=sequenza_parziale
+                self.__sequenza_ottima=sequenza_parziale.copy()
+
 
 
 

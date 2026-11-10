@@ -15,7 +15,6 @@ class PrezzoDAO:
         """
         cnx = DBConnect.get_connection()
         result = []
-        result_2=sorted(result, key=lambda x: x.prezzo_litro)
 
         if cnx is None:
             print("❌ Errore di connessione al database.")
