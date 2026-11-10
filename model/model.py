@@ -97,8 +97,10 @@ class Model:
 
             lista_prezzi = []
 
-            if prezzi.data.month==mese and len(lista_prezzi)<7:
-                lista_prezzi.append(prezzi.prezzo_litro)
+            for prezzo in prezzi:
+
+             if prezzo.data.month==mese and prezzo.data.day<=7:
+                lista_prezzi.append(prezzo.prezzo_litro)
 
             dizionario[distributore.id]=lista_prezzi
 
