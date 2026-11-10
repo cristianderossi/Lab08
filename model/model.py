@@ -41,6 +41,9 @@ class Model:
 
                 lista_prezzi.append(media)
 
+        prezzo_medio.append(lista_prezzi)
+
+
 
 
 
