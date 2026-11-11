@@ -88,12 +88,12 @@ class Model:
             if ultimo_distributore is not None and ultimo_distributore!=id:
 
                 costo_variabile+=5
-                sequenza_parziale.append(id)
+            sequenza_parziale.append(id)
 
 
-                self.__ricorsione(sequenza_parziale, giorno + 1, id, costo_corrente + costo_variabile, prezzi_settimana)
+            self.__ricorsione(sequenza_parziale, giorno + 1, id, costo_corrente + costo_variabile, prezzi_settimana)
 
-                sequenza_parziale.pop()
+            sequenza_parziale.pop()
 
 
 
