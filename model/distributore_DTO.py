@@ -19,7 +19,7 @@ class Distributore:
         """ Aggiorna e Restituisce la lista di prezzi (self.lista_prezzi) associati al distributore"""
         # TODO
 
-        lista_prezzi = PrezzoDAO.get_prezzi(self.lista_prezzi)
+        self.lista_prezzi = PrezzoDAO.get_prezzi(self.id)
 
 
         return self.lista_prezzi
