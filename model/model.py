@@ -79,6 +79,12 @@ class Model:
                 self.__sequenza_ottima=sequenza_parziale.copy()
 
 
+            return
+
+
+
+
+
 
 
 
