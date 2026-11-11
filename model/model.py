@@ -34,18 +34,19 @@ class Model:
 
             prezzi=distributore.get_prezzi()
 
-         lista_prezzi = []
+            lista_prezzi = []
 
-        for prezzo in prezzi:
+            for prezzo in prezzi:
 
                 if prezzo.data.month==mese:
                     lista_prezzi.append(prezzo.prezzo_litro)
 
-                media=sum(lista_prezzi)/len(lista_prezzi)
+            media=sum(lista_prezzi)/len(lista_prezzi)
 
-                prezzo_medio.append((distributore.nome, media))
+            prezzo_medio.append((distributore.nome, media))
 
         return prezzo_medio
+
 
 
 
